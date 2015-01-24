@@ -79,51 +79,50 @@ int main(int argc, char** argv) {
 }
 
 float somma(float a, float b) {
-        float risultato;
-    risultato = a + b;
+    float risultato;
+    risultato = a+b;
     return risultato;
 }
 
 float sottrazione(float a, float b) {
-     float risultato;
-    risultato = a - b;
+    float risultato;
+    risultato = a-b;
     return risultato;
 }
 
 float prodotto(float a, float b) {
     float risultato;
-    risultato = a * b;
+    risultato = a*b;
     return risultato;
 }
+
 float divisione(float a, float b) {
     float risultato;
-    risultato = a / b;
+    risultato = a/b;
     return risultato;
 }
 
 int quoziente(int a, int b) {
-     int risultato;
-    risultato = a / b;
+    int risultato;
+    risultato = a/b;
     return risultato;
 }
 
 float frazionale(int a, int b) {
-    float frazionale, divisionedecimale;
-    int quoziente;
-    quoziente = a/b;
-    divisionedecimale = divisione( a, b);
-    frazionale = divisionedecimale - quoziente;
-    
-    
-    return frazionale;
+    int q;
+    float d, risultato;
+    q = quoziente(a,b);
+    d = divisione((float)a, (float)b);
+    risultato = d - q;
+    return risultato;
 }
 
 float potenza(float base, int esponente) {
-    float potenza = 1;
-    int i;
-    for(i = 0; i < esponente ; i++)
-    {
-    potenza = potenza * base;    
+    float risultato;
+    risultato = 1;
+    while(esponente > 0) {
+        risultato *= base;
+        esponente--;
     }
-    return potenza;
-} 
+    return risultato;
+}
